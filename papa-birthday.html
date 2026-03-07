@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Papa Birthday Card</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Noto Sans Devanagari',sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+overflow:hidden;
+}
+
+/* pages */
+
+.page{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:25px;
+width:420px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* title */
+
+h1{
+color:#e63946;
+font-size:34px;
+text-shadow:0 0 10px #ff758f;
+}
+
+p{
+font-size:19px;
+line-height:1.7;
+color:#333;
+}
+
+/* button */
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#ff4d6d;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#d62839;
+}
+
+/* balloons */
+
+.balloon{
+position:absolute;
+bottom:-120px;
+width:55px;
+height:70px;
+border-radius:50%;
+animation:float 9s linear infinite;
+}
+
+.balloon:after{
+content:"";
+position:absolute;
+width:2px;
+height:55px;
+background:#444;
+left:50%;
+top:70px;
+}
+
+.balloon:nth-child(1){left:10%;background:#ff4d6d;}
+.balloon:nth-child(2){left:30%;background:#ffbe0b;}
+.balloon:nth-child(3){left:50%;background:#3a86ff;}
+.balloon:nth-child(4){left:70%;background:#8338ec;}
+.balloon:nth-child(5){left:90%;background:#06d6a0;}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* cake */
+
+.cake{
+position:relative;
+margin-top:40px;
+}
+
+.layer{
+width:220px;
+height:60px;
+background:#ffb3c1;
+border-radius:10px;
+margin:auto;
+}
+
+.layer2{
+width:200px;
+height:50px;
+background:#ffc8dd;
+margin:auto;
+margin-top:-10px;
+border-radius:10px;
+}
+
+.layer3{
+width:180px;
+height:40px;
+background:#ffafcc;
+margin:auto;
+margin-top:-10px;
+border-radius:10px;
+}
+
+/* candle */
+
+.candle{
+width:12px;
+height:35px;
+background:white;
+position:absolute;
+top:-35px;
+left:50%;
+transform:translateX(-50%);
+border-radius:3px;
+}
+
+.flame{
+width:12px;
+height:18px;
+background:orange;
+border-radius:50%;
+position:absolute;
+top:-18px;
+left:0;
+animation:flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(1.2);}
+}
+
+.hidden{
+display:none;
+}
+
+.signature{
+margin-top:20px;
+font-weight:bold;
+color:#d62828;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div id="page1" class="page">
+
+<div class="card">
+
+<h1>🎉 जन्मदिन मुबारक हो पापा 🎉</h1>
+
+<p>
+प्रिय पापा,<br><br>
+
+आप मेरे जीवन की सबसे बड़ी प्रेरणा और ताकत हैं।  
+आपने हमेशा मुझे सही रास्ता दिखाया और हर मुश्किल में मेरा साथ दिया।  
+
+आपका प्यार और आशीर्वाद ही मेरी सबसे बड़ी पूंजी है।  
+भगवान आपको हमेशा स्वस्थ, खुश और लंबी उम्र दें। ❤️  
+
+<br><br>
+
+🎂 जन्मदिन की ढेर सारी शुभकामनाएँ! 🎂
+</p>
+
+<div class="signature">— आपका बेटा, Sahil ❤️</div>
+
+<button onclick="nextPage()">केक देखें 🎂</button>
+
+</div>
+
+</div>
+
+
+<!-- PAGE 2 -->
+
+<div id="page2" class="page hidden">
+
+<h1>🎉 Happy Birthday Papa 🎉</h1>
+
+<div class="cake">
+
+<div class="layer"></div>
+<div class="layer2"></div>
+<div class="layer3"></div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+</div>
+
+<p style="font-size:22px;margin-top:25px;">
+🎂 आज का दिन आपके लिए खुशियों से भरा हो पापा 🎂
+</p>
+
+</div>
+
+
+<!-- balloons -->
+
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+
+
+<script>
+
+function nextPage(){
+document.getElementById("page1").classList.add("hidden");
+document.getElementById("page2").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
