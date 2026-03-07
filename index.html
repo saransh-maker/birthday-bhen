@@ -18,8 +18,6 @@ background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
 overflow:hidden;
 }
 
-/* Card */
-
 .card{
 background:white;
 padding:45px;
@@ -41,6 +39,32 @@ p{
 font-size:20px;
 color:#333;
 line-height:1.7;
+}
+
+.signature{
+margin-top:20px;
+font-size:22px;
+color:#d62828;
+font-weight:bold;
+}
+
+/* button */
+
+.btn{
+margin-top:25px;
+padding:12px 25px;
+font-size:18px;
+background:#ff4d6d;
+color:white;
+border:none;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#c9184a;
+transform:scale(1.1);
 }
 
 /* balloons */
@@ -75,22 +99,6 @@ top:70px;
 100%{transform:translateY(-120vh);}
 }
 
-/* confetti */
-
-.confetti{
-position:absolute;
-width:10px;
-height:10px;
-background:red;
-top:-10px;
-animation:fall 6s linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10px) rotate(0);}
-100%{transform:translateY(110vh) rotate(720deg);}
-}
-
 @keyframes glow{
 from{text-shadow:0 0 10px #ff4d6d;}
 to{text-shadow:0 0 20px #ff758f,0 0 35px #ff4d6d;}
@@ -99,13 +107,6 @@ to{text-shadow:0 0 20px #ff758f,0 0 35px #ff4d6d;}
 @keyframes fadeIn{
 from{opacity:0;transform:scale(0.8);}
 to{opacity:1;transform:scale(1);}
-}
-
-.signature{
-margin-top:20px;
-font-size:22px;
-color:#d62828;
-font-weight:bold;
 }
 
 </style>
@@ -127,17 +128,23 @@ font-weight:bold;
 मेरे जीवन की सबसे बड़ी दौलत है।  
 
 भगवान आपको हमेशा स्वस्थ, खुश और लंबी उम्र दें।  
-आपका हर दिन खुशियों से भरा रहे। ❤️
+आपका हर दिन खुशियों से भरा रहे ❤️  
 
 <br><br>
 
-🎂 **जन्मदिन की बहुत-बहुत शुभकामनाएँ पापा!** 🎂
+🎂 जन्मदिन की बहुत-बहुत शुभकामनाएँ पापा! 🎂
 </p>
 
 <div class="signature">
 — आपका बेटा, Sahil ❤️
 </div>
 
+<br>
+
+<a href="cake.html" target="_blank">
+<button class="btn">केक देखें 🎂</button>
+</a>
+
 </div>
 
 <div class="balloon"></div>
@@ -145,21 +152,6 @@ font-weight:bold;
 <div class="balloon"></div>
 <div class="balloon"></div>
 <div class="balloon"></div>
-
-<script>
-
-/* confetti generator */
-
-for(let i=0;i<40;i++){
-let conf=document.createElement("div");
-conf.className="confetti";
-conf.style.left=Math.random()*100+"%";
-conf.style.background=`hsl(${Math.random()*360},80%,60%)`;
-conf.style.animationDuration=(Math.random()*3+3)+"s";
-document.body.appendChild(conf);
-}
-
-</script>
 
 </body>
 </html>
